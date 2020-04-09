@@ -23,7 +23,10 @@ defmodule LetsReview do
     IO.gets("") |> String.trim |> String.to_charlist |> lets_review |> IO.puts
   end
 
+  def main do
+    line_number = IO.gets("") |> String.trim |> Integer.parse |> elem(0)
+    1..line_number |> Enum.each(fn _ -> LetsReview.read_line end)
+  end
+
 end
 
-line_number = IO.gets("") |> String.trim |> Integer.parse |> elem(0)
-1..line_number |> Enum.each(fn _ -> LetsReview.read_line end)
