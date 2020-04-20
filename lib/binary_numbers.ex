@@ -9,8 +9,12 @@ defmodule BinaryNumbers do
   end
 
   def count_ones([], current, max_so_far) do max(current, max_so_far) end
+
+  def main() do
+    number = IO.gets("") |> String.trim |> Integer.parse |> elem(0)
+    binary_rep = number |> Integer.to_string(2) |> String.to_charlist
+    BinaryNumbers.count_ones(binary_rep, 0, 0) |> IO.puts
+  end
 end
 
-number = IO.gets("") |> String.trim |> Integer.parse |> elem(0)
-binary_rep = number |> Integer.to_string(2) |> String.to_charlist
-BinaryNumbers.count_ones(binary_rep, 0, 0) |> IO.puts
+
